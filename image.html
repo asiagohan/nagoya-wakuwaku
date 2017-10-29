@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="flash_air.js"></script>
+<h1>名古屋城</h1>
+<p id="please_wait">Please wait...</p>
+<div>
+    <img id="photo" src="">
+    <button type="button" class="btn btn-success" >再撮影</button>
+</div>
+<script>
+    $(window).on('load',function(){
+        //fa_get(00); // flash airにリクエストを送る（光を消す）
+        setTimeout(function(){
+            $("#please_wait").remove();
+            $("#photo").attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Nagoya_Castle_Tower_in_Spring.jpg/550px-Nagoya_Castle_Tower_in_Spring.jpg");
+        }, 1000);
+    });
+</script>
+</body>
+</html>
