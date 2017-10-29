@@ -1,17 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html xmlns:wb="http://open.weibo.com/wb">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- Custom styles for this template -->
+    <link href="narrow-jumbotron.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 </head>
+
 <body>
 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="flash_air.js"></script>
-<div id="fb-root"></div>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -19,32 +30,55 @@
     js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10';
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<h1>Nagoya Castle</h1>
+
 <div class="container">
-    <div class="row">
-        <p id="please_wait">Please wait...</p>
-    </div>
-    <div class="row">
-        <div class="col col-12">
-             <img id="photo" class="img-responsive" src="">
+    <header class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills float-right">
+            </ul>
+        </nav>
+        <h3 class="text-muted">シャッチーズ</h3>
+    </header>
+
+    <main role="main">
+
+        <div id="back" class="jumbotron">
+            <div class="row">
+                <p id="please_wait">Please wait...</p>
+            </div>
+            <div class="row">
+                <div class="col col-12">
+                    <img id="photo" class="img-responsive" src="">
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div>
-            <button id="onemore" type="button" class="btn btn-success" >retake</button>
+        <div class="row align-items-center">
+            <div class="col-5">
+                <button id="onemore" type="button" class="btn btn-success" >retake</button>
+            </div>
+            <div class="btn-toolbar col-7 float-right">
+                <div class="btn-group">
+                <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">シェア</a></div>
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="名古屋城でこんな写真が撮れたよ！" data-hashtags="nagoyawakuwaku" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <wb:share-button addition="simple" type="button"></wb:share-button>
+                </div>
+            </div>
         </div>
-        <div>
-            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">シェア</a></div>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="名古屋城でこんな写真が撮れたよ！" data-hashtags="nagoyawakuwaku" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-    </div>
-</div>
+
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; wakuwaku team</p>
+    </footer>
+
+</div> <!-- /container -->
 <script>
     window.addEventListener("load", function(){
         fa_get(00); // flash airにリクエストを送る（光を消す）
         setTimeout(function(){
             $("#please_wait").remove();
-            $("#photo").attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Nagoya_Castle_Tower_in_Spring.jpg/550px-Nagoya_Castle_Tower_in_Spring.jpg");
+            $("#photo").attr("src", "https://nagoyahackathon.blob.core.windows.net/wakuwaku/syachihoko.jpg");
         }, 2000);
     });
     $("#onemore").on('click', function(){

@@ -1,35 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Narrow Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- Custom styles for this template -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="narrow-jumbotron.css" rel="stylesheet">
 </head>
+
 <body>
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script src="flash_air.js"></script>
-  <h1>Nagoya Castle</h1>
-  <button type="button" class="btn btn-primary" id="cheese_button">Say, Cheese!</button>
-  <audio id="sound" preload="auto">
-      <source src="camera.mp3" type="audio/mp3">
-  </audio>
-  <img id="countdown" src="">
-  <script>
-      $("#cheese_button").on('click', function(){
-          $("#cheese_button").remove();
-          $("#countdown").attr("src", "321.gif");
-          setTimeout(function(){
-              $("#countdown").remove();
-              document.getElementById("sound").play(); // シャッター音を出す
-              fa_get(02); // flash airにリクエストを送る（光らせる）
-              setTimeout(function(){
-                  window.location.href = 'image.html';
-              }, 1000);
-          }, 4000);
-      });
-  </script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="flash_air.js"></script>
+
+<div class="container">
+    <header class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills float-right">
+            </ul>
+        </nav>
+        <h3 class="text-muted">シャッチーズ</h3>
+    </header>
+
+    <main role="main">
+
+        <div id="back" class="jumbotron">
+            <h1 id="spot" class="display-3">Nagoya Castle</h1>
+            <p><button class="btn btn-lg btn-success" id="cheese_button" role="button">Say, Cheese!</button></p>
+            <img id="countdown" src="">
+        </div>
+        <audio id="sound" preload="auto">
+            <source src="camera.mp3" type="audio/mp3">
+        </audio>
+        <script>
+            $("#cheese_button").on('click', function(){
+                $("#cheese_button").remove();
+                $("#spot").remove();
+                $("#countdown").attr("src", "321.gif");
+                setTimeout(function(){
+                    $("#countdown").remove();
+                    $("#sound")[0].play(); // シャッター音を出す
+                    fa_get(02); // flash airにリクエストを送る（光らせる）
+                    setTimeout(function(){
+                        window.location.href = 'image.html';
+                    }, 1000);
+                }, 4000);
+            });
+        </script>
+
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; wakuwaku team</p>
+    </footer>
+
+</div> <!-- /container -->
 </body>
 </html>
