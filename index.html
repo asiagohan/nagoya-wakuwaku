@@ -19,7 +19,7 @@
   <img id="countdown" src="">
   <script>
       $("#cheese_button").on('click', function(){
-          $("#cheese_button").prop("disabled", true);
+          $("#cheese_button").remove();
           $("#countdown").attr("src", "321.gif");
           setTimeout(function(){
               $("#countdown").remove();
@@ -28,7 +28,7 @@
               setTimeout(function(){
                   window.location.href = 'image.html';
               }, 1000);
-          }, 3000);
+          }, 4000);
       });
   </script>
 </body>

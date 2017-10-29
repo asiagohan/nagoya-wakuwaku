@@ -11,20 +11,45 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="flash_air.js"></script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10';
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <h1>名古屋城</h1>
-<p id="please_wait">Please wait...</p>
-<div>
-    <img id="photo" src="">
-    <button type="button" class="btn btn-success" >再撮影</button>
+<div class="container">
+    <div class="row">
+        <p id="please_wait">Please wait...</p>
+    </div>
+    <div class="row">
+        <div class="col col-12">
+             <img id="photo" class="img-responsive" src="">
+        </div>
+    </div>
+    <div class="row">
+        <div>
+            <button id="onemore" type="button" class="btn btn-success" >再撮影</button>
+        </div>
+        <div>
+            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">シェア</a></div>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="名古屋城でこんな写真が撮れたよ！" data-hashtags="nagoyawakuwaku" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
 </div>
 <script>
-    $(window).on('load',function(){
+    window.addEventListener("load", function(){
         fa_get(00); // flash airにリクエストを送る（光を消す）
         setTimeout(function(){
             $("#please_wait").remove();
             $("#photo").attr("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Nagoya_Castle_Tower_in_Spring.jpg/550px-Nagoya_Castle_Tower_in_Spring.jpg");
-        }, 1000);
+        }, 2000);
     });
+    $("#onemore").on('click', function(){
+        window.location.href = 'index.html';
+    })
 </script>
 </body>
 </html>
